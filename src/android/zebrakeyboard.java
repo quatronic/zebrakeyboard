@@ -14,7 +14,7 @@ import org.json.JSONObject;
 	https://developer.android.com/reference/android/content/Intent
 	https://www.javatpoint.com/android-intent-tutorial
  */
-public class ZebraKeyboardPlugin extends Plugin {
+public class ZebraKeyboard extends Plugin {
 
     /**
      * Executes the request and returns PluginResult.
@@ -27,8 +27,21 @@ public class ZebraKeyboardPlugin extends Plugin {
             
 		@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		if ("hideKeyboard".equals(action)) {
-			this.selectTemplate("Vanboxtel_Null_Keyboard",	"Null_Keyboard");   
+		if ("selectTemplate".equals(action)) {
+			String layout;
+			String layoutGroupName;
+		  try {
+			JSONObject options = args.getJSONObject(0);
+			layout = options.getString("layout");
+			layoutGroupName = options.getString("layoutGroupName");
+		  } catch (JSONException e) {
+			callbackContext.error("Error encountered: " + e.getMessage());
+			return false;
+		  }
+			this.selectTemplate(layoutGroupName,layout);  
+			  // Send a positive result to the callbackContext
+			  PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+			  callbackContext.sendPluginResult(pluginResult);			
 			return true;
 		}
 		return false;  // Returning false results in a "MethodNotFound" error.
@@ -36,7 +49,13 @@ public class ZebraKeyboardPlugin extends Plugin {
 	
 	private void selectTemplate(String layoutGroupName, String layout) {
 		if (layoutGroupName != null && layoutGroupName.length() > 0 && layout != null && layout.length() > 0) {
-
+				Intent intent = new Intent();
+				intent.setAction("com.symbol.ekb.api.ACTION_UPDATE");
+				intent.setPackage("com.symbol.mxmf.csp.enterprisekeyboard");
+				intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
+				intent.putExtra("CURRENT_LAYOUT_GROUP", layoutGroupName);
+				intent.putExtra("CURRENT_LAYOUT_NAME", layout);
+				sendBroadcast(intent);
 				callbackContext.success();
 		} else {
 			callbackContext.error("Expected one non-empty string argument.");

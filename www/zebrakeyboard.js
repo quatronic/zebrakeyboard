@@ -1,21 +1,21 @@
 // Empty constructor
-function ZebraKeyboardPlugin() {}
+function zebraKeyboard() {}
 
 // The function that passes work along to native shells
-// Message is a string, duration may be 'long' or 'short'
-ZebraKeyboardPlugin.prototype.show = function(message, duration, successCallback, errorCallback) {
+// layoutGroupName is a string (default: "Vanboxtel_Null_Keyboard", layout is a string (default: "Null_Keyboard")
+zebraKeyboard.prototype.selectTemplate = function(layout, layoutGroupName, successCallback, errorCallback) {
   var options = {};
-  options.message = message;
-  options.duration = duration;
-  cordova.exec(successCallback, errorCallback, 'ZebraKeyboardPlugin', 'hideKeyboard', [options]);
+  options.layout = layout;
+  options.layoutGroupName = layoutGroupName;
+  cordova.exec(successCallback, errorCallback, 'ZebraKeyboardPlugin', 'selectTemplate', [options]);
 }
 
 // Installation constructor that binds ZebraKeyboardPlugin to window
-ZebraKeyboardPlugin.install = function() {
+zebraKeyboard.install = function() {
   if (!window.plugins) {
     window.plugins = {};
   }
-  window.plugins.ZebraKeyboardPlugin = new ZebraKeyboardPlugin();
-  return window.plugins.ZebraKeyboardPlugin;
+  window.plugins.zebraKeyboard = new zebraKeyboard();
+  return window.plugins.zebraKeyboard;
 };
-cordova.addConstructor(ZebraKeyboardPlugin.install);
+cordova.addConstructor(zebraKeyboard.install);
