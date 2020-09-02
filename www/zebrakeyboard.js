@@ -7,10 +7,10 @@ ZebraKeyboardPlugin.prototype.show = function(message, duration, successCallback
   var options = {};
   options.message = message;
   options.duration = duration;
-  cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'show', [options]);
+  cordova.exec(successCallback, errorCallback, 'ZebraKeyboardPlugin', 'hideKeyboard', [options]);
 }
 
-// Installation constructor that binds ToastyPlugin to window
+// Installation constructor that binds ZebraKeyboardPlugin to window
 ZebraKeyboardPlugin.install = function() {
   if (!window.plugins) {
     window.plugins = {};
