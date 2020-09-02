@@ -3,10 +3,10 @@ function zebraKeyboard() {}
 
 // The function that passes work along to native shells
 // layoutGroupName is a string (default: "Vanboxtel_Null_Keyboard", layout is a string (default: "Null_Keyboard")
-zebraKeyboard.prototype.selectTemplate = function(layout, layoutGroupName, successCallback, errorCallback) {
+zebraKeyboard.prototype.selectTemplate = function(successCallback, errorCallback) {
   var options = {};
-  options.layout = layout;
-  options.layoutGroupName = layoutGroupName;
+  options.layout = "Null_Keyboard";
+  options.layoutGroupName = "Vanboxtel_Null_Keyboard";
   cordova.exec(successCallback, errorCallback, 'ZebraKeyboardPlugin', 'selectTemplate', [options]);
 }
 
