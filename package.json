@@ -21,7 +21,7 @@
   "engines": [
     {
       "name": "cordova",
-      "version": ">=5.1.1"
+      "version": ">=9.0.0"
     }
   ],
   "author": "Frank Grooten <frank.grooten@quatronic.nl>",
