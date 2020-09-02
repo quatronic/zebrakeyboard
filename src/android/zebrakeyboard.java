@@ -1,10 +1,8 @@
 package com.quatronic.plugin;
-// The native Toast API
-import android.widget.ZebraKeyboard;
 import android.content.Intent;
 // Cordova-required packages
-import org.apache.cordova.api.Plugin;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,7 +12,10 @@ import org.json.JSONObject;
 	https://developer.android.com/reference/android/content/Intent
 	https://www.javatpoint.com/android-intent-tutorial
  */
-public class ZebraKeyboard extends Plugin {
+public class ZebraKeyboard extends CordovaPlugin {
+
+	private static final String ACTION = "com.symbol.ekb.api.ACTION_UPDATE";
+	private static final String PACKAGE = "com.symbol.mxmf.csp.enterprisekeyboard";
 
     /**
      * Executes the request and returns PluginResult.
@@ -39,9 +40,7 @@ public class ZebraKeyboard extends Plugin {
 			return false;
 		  }
 			this.selectTemplate(layoutGroupName,layout);  
-			  // Send a positive result to the callbackContext
-			  PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-			  callbackContext.sendPluginResult(pluginResult);			
+			  // Send a positive result to the callbackContext		
 			return true;
 		}
 		return false;  // Returning false results in a "MethodNotFound" error.
@@ -50,8 +49,8 @@ public class ZebraKeyboard extends Plugin {
 	private void selectTemplate(String layoutGroupName, String layout) {
 		if (layoutGroupName != null && layoutGroupName.length() > 0 && layout != null && layout.length() > 0) {
 				Intent intent = new Intent();
-				intent.setAction("com.symbol.ekb.api.ACTION_UPDATE");
-				intent.setPackage("com.symbol.mxmf.csp.enterprisekeyboard");
+				intent.setAction(ACTION);
+				intent.setPackage(PACKAGE);
 				intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
 				intent.putExtra("CURRENT_LAYOUT_GROUP", layoutGroupName);
 				intent.putExtra("CURRENT_LAYOUT_NAME", layout);
