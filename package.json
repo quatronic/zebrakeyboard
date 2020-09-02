@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-zebraKeyboard",
+  "version": "0.0.1",
+  "description": "An Android Cordova plugin that allows you select a specific custom Zebra Keyboard Template.",
+  "cordova": {
+    "id": "cordova-plugin-zebraKeyboard",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quatronic/zebrakeyboard.git"
+  },
+  "keywords": [
+    "Zebra",
+    "Keyboard",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Frank Grooten <frank.grooten@quatronic.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quatronic/zebrakeyboard/issues"
+  },
+  "homepage": "https://github.com/quatronic/zebrakeyboard/"
+}
