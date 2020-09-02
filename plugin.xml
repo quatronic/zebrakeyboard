@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-zebraKeyboard" version="0.0.1">
-    <name>zebrakeyboard</name>
+        id="cordova-plugin-zebrakeyboard" version="0.0.1">
+    <name>ZebraKeyboard</name>
 
     <description>An Android Cordova plugin that allows you select a specific custom Zebra Keyboard Template.</description>
     <license>MIT</license>
@@ -12,19 +12,20 @@
     <issue>https://github.com/quatronic/zebrakeyboard/issues</issue>
   
     <engines>
-        <engine name="cordova" version=">=3.0.0"/>
+        <engine name="cordova" version=">=5.1.1"/>
     </engines>
   
     <js-module src="www/zebrakeyboard.js" name="zebraKeyboard">
         <clobbers target="window.plugins.zebraKeyboard" />
     </js-module>
+	
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="ZebraKeyboard">
-                <param name="android-package" value="com.quatronic.cordova.plugin.ZebraKeyboard"/>
+                <param name="android-package" value="com.quatronic.plugin.ZebraKeyboard"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/ZebraKeyboard.java" target-dir="src/com/quatronic/cordova/plugin" />
+        <source-file src="src/android/ZebraKeyboard.java" target-dir="src/com/quatronic/plugin" />
     </platform>
 </plugin>

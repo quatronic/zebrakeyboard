@@ -1,7 +1,6 @@
-package com.quatronic.cordova.plugin;
+package com.quatronic.plugin;
 // The native Toast API
 import android.widget.ZebraKeyboard;
-import com.symbol.ekb;
 import android.content.Intent;
 // Cordova-required packages
 import org.apache.cordova.api.Plugin;
@@ -13,6 +12,7 @@ import org.json.JSONObject;
 /**
  * This class calls a specific template from the zebra keyboard.
 	https://developer.android.com/reference/android/content/Intent
+	https://www.javatpoint.com/android-intent-tutorial
  */
 public class ZebraKeyboardPlugin extends Plugin {
 
@@ -36,12 +36,7 @@ public class ZebraKeyboardPlugin extends Plugin {
 	
 	private void selectTemplate(String layoutGroupName, String layout) {
 		if (layoutGroupName != null && layoutGroupName.length() > 0 && layout != null && layout.length() > 0) {
-				Intent intent = new Intent();
-				intent.setAction('com.symbol.ekb.api.ACTION_UPDATE');
-				intent.setPackage('com.symbol.mxmf.csp.enterprisekeyboard');
-				intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
-				intent.putExtra("CURRENT_LAYOUT_GROUP", layoutGroupName);
-				intent.putExtra("CURRENT_LAYOUT_NAME", layout);
+
 				callbackContext.success();
 		} else {
 			callbackContext.error("Expected one non-empty string argument.");
