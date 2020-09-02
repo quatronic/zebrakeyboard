@@ -15,16 +15,16 @@
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
   
-    <js-module src="www/zebrakeyboard.js" name="zebrakeyboard">
-        <clobbers target="window.plugins.zebrakeyboard" />
+    <js-module src="www/zebrakeyboard.js" name="zebraKeyboard">
+        <clobbers target="window.plugins.zebraKeyboard" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="zebrakeyboard">
-                <param name="android-package" value="com.quatronic.cordova.plugin.zebrakeyboard"/>
+            <feature name="ZebraKeyboard">
+                <param name="android-package" value="com.quatronic.cordova.plugin.ZebraKeyboard"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/zebrakeyboard.java" target-dir="src/com/quatronic/cordova/plugin" />
+        <source-file src="src/android/ZebraKeyboard.java" target-dir="src/com/quatronic/cordova/plugin" />
     </platform>
 </plugin>
