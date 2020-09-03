@@ -3,7 +3,7 @@ function zebraKeyboard() {}
 
 // The function that passes work along to native shells
 // layoutGroupName is a string (default: "Vanboxtel_Null_Keyboard", layout is a string (default: "Null_Keyboard")
-zebraKeyboard.prototype.selectTemplate = function(successCallback, errorCallback) {
+zebraKeyboard.prototype.selectLayout = function(successCallback, errorCallback) {
   var options = {};
   options.layout = "Null_Keyboard";
   options.layoutGroupName = "Vanboxtel_Null_Keyboard";
