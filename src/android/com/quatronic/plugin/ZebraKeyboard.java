@@ -2,7 +2,6 @@ package com.quatronic.plugin;
 
 import android.content.Intent;
 import android.content.Context;
-import android.content.BroadcastReceiver;
 // Cordova-required packages
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -58,7 +57,8 @@ public class ZebraKeyboard extends CordovaPlugin {
 				intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
 				intent.putExtra("CURRENT_LAYOUT_GROUP", layoutGroupName);
 				intent.putExtra("CURRENT_LAYOUT_NAME", layout);
-				sendBroadcast(intent);
+				this.cordova.getActivity().startActivity(intent);
+				// context.sendBroadcast(intent);    trying this for a change
 				callbackContext.success();
 		} else {
 			callbackContext.error("Expected one non-empty string argument.");
