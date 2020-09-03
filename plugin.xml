@@ -12,7 +12,7 @@
     <issue>https://github.com/quatronic/zebrakeyboard/issues</issue>
   
     <engines>
-        <engine name="cordova" version=">=8.0.0"/>
+        <engine name="cordova" version=">=7.1.0"/>
     </engines>
   
     <js-module src="www/zebrakeyboard.js" name="zebraKeyboard">
