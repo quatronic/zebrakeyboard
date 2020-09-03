@@ -26,6 +26,6 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/ZebraKeyboard.java" target-dir="src/com/quatronic/plugin" />
+        <source-file src="src/android/com/quatronic/plugin/ZebraKeyboard.java" target-dir="src/com/quatronic/plugin" />
     </platform>
 </plugin>
