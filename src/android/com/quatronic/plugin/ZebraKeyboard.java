@@ -1,4 +1,4 @@
-
+package com.quatronic.plugin
 import android.content.*;
 // Cordova-required packages
 import org.apache.cordova.CordovaPlugin;
