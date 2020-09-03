@@ -14,6 +14,7 @@ import org.json.JSONObject;
 	https://developer.android.com/reference/android/content/Intent
 	https://www.javatpoint.com/android-intent-tutorial
 	https://techdocs.zebra.com/enterprise-keyboard/latest/guide/apis/
+	https://stackoverflow.com/questions/40375555/start-android-activity-from-cordova-plugin
  */
 public class ZebraKeyboard extends CordovaPlugin {
 
@@ -31,7 +32,8 @@ public class ZebraKeyboard extends CordovaPlugin {
             
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		if ("selectTemplate".equals(action)) {
+		Context context = cordova.getActivity().getApplicationContext();
+		if ("selectLayout".equals(action)) {
 			String layout;
 			String layoutGroupName;
 		  try {
@@ -42,14 +44,14 @@ public class ZebraKeyboard extends CordovaPlugin {
 			callbackContext.error("Error encountered: " + e.getMessage());
 			return false;
 		  }
-			this.selectTemplate(layoutGroupName,layout,callbackContext);  
+			this.selectTemplate(layoutGroupName,layout,callbackContext,context);  
 			  // Send a positive result to the callbackContext		
 			return true;
 		}
 		return false;  // Returning false results in a "MethodNotFound" error.
 	}
 	
-	private void selectTemplate(String layoutGroupName, String layout,CallbackContext callbackContext) {
+	private void selectLayout(String layoutGroupName, String layout,CallbackContext callbackContext,Context context) {
 		if (layoutGroupName != null && layoutGroupName.length() > 0 && layout != null && layout.length() > 0) {
 				Intent intent = new Intent();
 				intent.setAction(ACTION);
