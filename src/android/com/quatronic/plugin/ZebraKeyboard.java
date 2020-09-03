@@ -2,7 +2,7 @@ package com.quatronic.plugin;
 
 import android.content.Intent;
 import android.content.Context;
-import android.content.context.sendbroadcast;
+import android.content.BroadcastReceiver;
 // Cordova-required packages
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -14,6 +14,7 @@ import org.json.JSONObject;
  * This class calls a specific template from the zebra keyboard.
 	https://developer.android.com/reference/android/content/Intent
 	https://www.javatpoint.com/android-intent-tutorial
+	https://techdocs.zebra.com/enterprise-keyboard/latest/guide/apis/
  */
 public class ZebraKeyboard extends CordovaPlugin {
 
