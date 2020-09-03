@@ -44,7 +44,7 @@ public class ZebraKeyboard extends CordovaPlugin {
 			callbackContext.error("Error encountered: " + e.getMessage());
 			return false;
 		  }
-			this.selectTemplate(layoutGroupName,layout,callbackContext,context);  
+			this.selectLayout(layoutGroupName,layout,callbackContext,context);  
 			  // Send a positive result to the callbackContext		
 			return true;
 		}
