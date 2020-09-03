@@ -1,5 +1,5 @@
 
-import android.content.Intent;
+import android.content.*;
 // Cordova-required packages
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -39,14 +39,14 @@ public class ZebraKeyboard extends CordovaPlugin {
 			callbackContext.error("Error encountered: " + e.getMessage());
 			return false;
 		  }
-			this.selectTemplate(layoutGroupName,layout);  
+			this.selectTemplate(layoutGroupName,layout,callbackContext);  
 			  // Send a positive result to the callbackContext		
 			return true;
 		}
 		return false;  // Returning false results in a "MethodNotFound" error.
 	}
 	
-	private void selectTemplate(String layoutGroupName, String layout) {
+	private void selectTemplate(String layoutGroupName, String layout,CallbackContext callbackContext) {
 		if (layoutGroupName != null && layoutGroupName.length() > 0 && layout != null && layout.length() > 0) {
 				Intent intent = new Intent();
 				intent.setAction(ACTION);
@@ -54,7 +54,7 @@ public class ZebraKeyboard extends CordovaPlugin {
 				intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
 				intent.putExtra("CURRENT_LAYOUT_GROUP", layoutGroupName);
 				intent.putExtra("CURRENT_LAYOUT_NAME", layout);
-				sendBroadcast(intent);
+				//sendBroadcast(intent);
 				callbackContext.success();
 		} else {
 			callbackContext.error("Expected one non-empty string argument.");
