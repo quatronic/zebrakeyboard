@@ -7,7 +7,7 @@ zebraKeyboard.prototype.selectLayout = function(successCallback, errorCallback) 
   var options = {};
   options.layout = "Null_Keyboard";
   options.layoutGroupName = "Vanboxtel_Null_Keyboard";
-  cordova.exec(successCallback, errorCallback, 'ZebraKeyboardPlugin', 'selectTemplate', [options]);
+  cordova.exec(successCallback, errorCallback, 'ZebraKeyboard', 'selectLayout', [options]);
 }
 
 // Installation constructor that binds ZebraKeyboardPlugin to window
