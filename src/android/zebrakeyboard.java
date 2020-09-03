@@ -1,4 +1,4 @@
-package com.quatronic.plugin;
+
 import android.content.Intent;
 // Cordova-required packages
 import org.apache.cordova.CordovaPlugin;
@@ -26,7 +26,7 @@ public class ZebraKeyboard extends CordovaPlugin {
      * @return              A PluginResult object with a status and message.
      */
             
-		@Override
+	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		if ("selectTemplate".equals(action)) {
 			String layout;
