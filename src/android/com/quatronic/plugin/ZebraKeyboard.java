@@ -1,6 +1,8 @@
 package com.quatronic.plugin;
 
-import android.content.*;
+import android.content.Intent;
+import android.content.Context;
+import android.content.context.sendbroadcast;
 // Cordova-required packages
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
