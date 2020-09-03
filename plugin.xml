@@ -16,7 +16,7 @@
     </engines>
   
     <js-module src="www/zebrakeyboard.js" name="zebraKeyboard">
-        <clobbers target="cordova.plugins.zebraKeyboard" />
+        <clobbers target="window.plugins.zebraKeyboard" />
     </js-module>
 	
     <platform name="android">
