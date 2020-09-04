@@ -59,8 +59,8 @@ public class ZebraKeyboard extends CordovaPlugin {
 				intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
 				intent.putExtra("CURRENT_LAYOUT_GROUP", layoutGroupName);
 				intent.putExtra("CURRENT_LAYOUT_NAME", layout);
-				this.cordova.getActivity().startActivity(intent);
-				// context.sendBroadcast(intent);    trying this for a change
+				//this.cordova.getActivity().startActivity(intent);
+				context.sendBroadcast(intent);  
 				callbackContext.success();
 		} else {
 			callbackContext.error("Expected one non-empty string argument.");
