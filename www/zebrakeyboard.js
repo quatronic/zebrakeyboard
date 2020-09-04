@@ -5,8 +5,8 @@ function zebraKeyboard() {}
 // layoutGroupName is a string (default: "Vanboxtel_Null_Keyboard", layout is a string (default: "Null_Keyboard")
 zebraKeyboard.prototype.selectLayout = function(successCallback, errorCallback,layoutGroupName,layout) {
   var options = {};
-  options.layoutGroupName = layoutGroupName;
-  options.layout = layout;
+  options.layoutGroupName = String(layoutGroupName);
+  options.layout = String(layout);
   cordova.exec(successCallback, errorCallback, 'ZebraKeyboard', 'selectLayout', [options]);
 }
 
