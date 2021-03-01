@@ -1,9 +1,9 @@
 {
   "name": "zebrakeyboard",
   "version": "0.0.1",
-  "description": "An Android Cordova plugin that allows you select a specific custom Zebra Keyboard Template.",
+  "description": "An Android Cordova plugin that allows you select a specific custom Zebra Keyboard layout.",
   "cordova": {
-    "id": "cordova-plugin-android-zebrakeyboard-template",
+    "id": "cordova-plugin-android-zebrakeyboard-layout",
     "platforms": [
       "android"
     ]
