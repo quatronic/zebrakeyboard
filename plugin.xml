@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="com-quatronic-plugin-android-zebrakeyboard-layout" version="0.0.2">
+        id="com-quatronic-cordova-plugin-android-zebrakeyboard-layout" version="0.0.2">
     <name>ZebraKeyboard-layout</name>
 
-    <description>An Android Cordova plugin that allows you select a specific custom Zebra Keyboard Template.</description>
+    <description>An Android Cordova plugin that allows you select a specific custom Zebra Keyboard layout.</description>
     <license>MIT</license>
 
-    <keywords>cordova,android,zebra,keyboard</keywords>
+    <keywords>cordova,android,zebra,keyboard,layout,quatronic</keywords>
     <repo>https://github.com/quatronic/zebrakeyboard</repo>
     <issue>https://github.com/quatronic/zebrakeyboard/issues</issue>
   
